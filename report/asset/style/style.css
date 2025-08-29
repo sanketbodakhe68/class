@@ -1,0 +1,143 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas: "nav"
+    "main"
+    "foot";
+
+    overflow-x: hidden;
+    
+    
+    
+}
+
+.navbar{
+    grid-area: nav;
+    background-color: antiquewhite;
+     background: radial-gradient(circle,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 69%, rgba(252, 176, 69, 1) 82%);
+
+
+}
+.main{
+    grid-area: main;
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: repeat(4,200px);
+    grid-template-columns: repeat(3,200px);
+    justify-content: space-around;
+    align-content: center;
+    gap: 50px;
+    
+}
+.foot{
+    grid-area: foot;
+    background-color: blueviolet;
+
+}
+.cart{
+  margin: 15px;
+  transition: all 2s linear;
+  animation: cart 5s linear  infinite alternate ;
+    
+    
+}
+.cart:nth-child(odd){
+  margin: 15px;
+  transition: all 2s linear;
+  animation: cart 5s linear  infinite alternate-reverse ;
+    
+    
+}
+.img1{
+    background-image: url(./../img/img1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.img2{
+     background-image: url(./../img/img2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+     
+}
+.img3{
+     background-image: url(./../img/img3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img4{
+     background-image: url(./../img/img4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img5{
+     background-image: url(./../img/img5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img6{
+     background-image: url(./../img/img6.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@keyframes cart {
+
+0%{
+    rotate: 45deg;
+}
+
+
+100%{
+    rotate: -45deg;
+
+}
+
+}
+
+
+.navcont{
+    text-align: end;
+    
+    font-size: 30px;
+    margin: 0;
+    position: relative;
+    animation:  navbar 23s linear normal infinite ;
+    color: rgb(255, 255, 255);
+    
+    
+
+}
+
+
+@keyframes navbar{
+
+    0%{
+        overflow: hidden;
+        right: -40%;
+    
+
+        /* background-color: rgb(0,255,255); */
+       
+
+    }
+
+
+    100%{
+        right: 100%;
+       
+
+    }
+}

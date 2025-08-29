@@ -1,0 +1,41 @@
+
+
+  @media(max-width:820px ){
+    .main{
+    grid-area: main;
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: repeat(6,200px);
+    grid-template-columns: repeat(2,200px);
+    justify-content: space-around;
+    align-content: center;
+    gap: 50px;
+    
+}
+
+
+
+
+
+
+  }
+  @media (max-width:412px) {
+    .main{
+    grid-area: main;
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: repeat(12,200px);
+    grid-template-columns: repeat(1,200px);
+    justify-content: space-around;
+    gap: 50px;
+    
+}
+.cart{
+   
+    margin: 15px;
+}
+
+    
+  }
+
+

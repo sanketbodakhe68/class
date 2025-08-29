@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+
+            padding: 0;
+            background-color: gray;
+          
+            
+        }
+        .cal{
+            height: 500px ;
+            width: 400px;
+            display: grid;
+            grid-template-rows: repeat(5,100px);
+            grid-template-columns: repeat(4,100px);
+            border: 1px solid red;
+            border-radius: 30px;
+             margin: auto;
+             margin-top:150px;
+        }
+        .but{
+            
+            display: grid;
+            padding: 5px;
+            
+
+        }
+        .io{
+            grid-column: 1/4;
+            display: grid;
+        }
+        .buttondesing{
+            border-radius: 40%;
+            border: 1px solid ;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .iof{
+            border: solid green;
+            border-radius: 20%;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            background-color: rgb(197, 178, 178);
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            /* margin-right: 20px; */
+            /* text-align: center; */
+       
+        }
+    </style>
+</head>
+<body>
+
+<div class="cal">
+    <div class="io"> <div class="iof" id="id1"></div></div>
+    <div class="but"><Button class="buttondesing" onclick="clear1()">c</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('1')">1</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('2')">2</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('3')">3</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('/')">/</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('4')">4</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('5')">5</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('1')">6</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('*')">*</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('7')">7</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('8')">8</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('9')">9</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('-')">-</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('0')">0</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('.')">.</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="cal()">=</Button></div>
+    <div class="but"><Button class="buttondesing" onclick="button('+')">+</Button></div>
+</div>
+
+
+
+
+
+
+
+<script>
+    "use strict";
+    let display= document.getElementById("id1").innerText;
+
+    function output(x){
+        document.getElementById("id1").innerText = x
+    }
+
+    function button(x){
+        display += x;
+        console.log(display);
+        output(display);
+    }
+    function cal(){
+
+        let ans = eval(display)
+        output(ans)
+    }
+    function clear1(){
+        console.log("click");
+        
+        display = ""
+        // console.log(display);
+        
+        output(display)
+    }
+</script>
+    
+</body>
+</html>
