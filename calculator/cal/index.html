@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    
+    <h1 class="ti">Calculator</h1>
+
+<div class="cal">
+    <div class="io" id="display">0</div>
+
+    <div class="but"><button class="buttondesing op" onclick="clearDisplay()">C</button></div>
+    <div class="but"><button class="buttondesing op" onclick="append('/')">/</button></div>
+    <div class="but"><button class="buttondesing op" onclick="append('*')">*</button></div>
+    <div class="but"><button class="buttondesing op" onclick="append('-')">-</button></div>
+
+    <div class="but"><button class="buttondesing" onclick="append('7')">7</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('8')">8</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('9')">9</button></div>
+    <div class="but"><button class="buttondesing op" onclick="append('+')">+</button></div>
+
+    <div class="but"><button class="buttondesing" onclick="append('4')">4</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('5')">5</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('6')">6</button></div>
+    <div class="but"><button class="buttondesing eq" onclick="calculate()">=</button></div>
+
+    <div class="but"><button class="buttondesing" onclick="append('1')">1</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('2')">2</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('3')">3</button></div>
+    <div class="but"><button class="buttondesing" onclick="append('.')">.</button></div>
+
+    <div class="but" style="grid-column: span 4;">
+        <button class="buttondesing" style="width:90%; border-radius:20px;" onclick="append('0')">0</button>
+    </div>
+</div>
+<h6>    <p class="name">&copy; 2025 My By Bodakhe Sanket. All rights reserved.</p></h6>
+<script src="./script.js"></script>
+</body>
+</html>
