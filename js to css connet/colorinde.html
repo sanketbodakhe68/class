@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100;
+           border: solid green;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+        
+        }
+        .sbox{
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            border: solid red;
+            
+        }
+        .input{
+            margin-top: 50px;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="sbox" id="idd1">  </div> 
+
+    </div>
+
+    <div class="input">
+        <input type="color" oninput="col()" id="id1">
+    </div>
+
+
+
+
+
+    <script>
+        "use strict"
+        let a= document.getElementById("idd1")
+
+
+
+        function col(){
+
+            let v = document.getElementById("id1").value;
+            console.log(v);
+            a.style.backgroundColor=`${v}`
+            
+        }
+    </script>
+</body>
+
+</html>
