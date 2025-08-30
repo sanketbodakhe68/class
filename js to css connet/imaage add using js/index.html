@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Preview with Download</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .box {
+      height: 500px;
+      width: 500px;
+      border: 1px solid red;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="photo" accept="image/*" onchange="photo()">
+  <div class="box" id="id1"></div>
+  <a id="downloadBtn" class="btn" download="my-image.jpg" style="display:none;">Download</a>
+
+  <script>
+    "use strict";
+    let p = document.getElementById("id1");
+    let downloadBtn = document.getElementById("downloadBtn");
+
+    function photo() {
+      let fileInput = document.getElementById("photo");
+      let file = fileInput.files[0];
+      if (file) {
+        let url = URL.createObjectURL(file);
+
+        // Show preview in box
+        p.style.backgroundImage = `url(${url})`;
+        p.style.backgroundSize = "cover";
+        p.style.backgroundPosition = "center";
+
+        // Enable download
+        downloadBtn.href = url;
+        downloadBtn.download = file.name; // Keep original filename
+        downloadBtn.style.display = "inline-block";
+      }
+    }
+  </script>
+</body>
+</html>
