@@ -8,41 +8,87 @@
     body {
       margin: 0;
       padding: 0;
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      flex-direction: column;
       gap: 20px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
     }
+
+    input[type="file"] {
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="file"]:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
     .box {
-      height: 500px;
-      width: 500px;
-      border: 1px solid red;
+      height: 400px;
+      width: 400px;
+      border-radius: 20px;
+      border: 2px dashed rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 18px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
+
+    .box:hover {
+      transform: scale(1.02);
+      border-color: #fff;
+    }
+
     .btn {
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
-      border-radius: 8px;
-      background: #007bff;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
       color: white;
-      cursor: pointer;
       font-size: 16px;
+      font-weight: bold;
       text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
+
+    .btn:hover {
+      background: linear-gradient(45deg, #ee0979, #ff6a00);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
     .btn:disabled {
       background: gray;
       cursor: not-allowed;
+      box-shadow: none;
     }
   </style>
 </head>
 <body>
   <input type="file" id="photo" accept="image/*" onchange="photo()">
-  <div class="box" id="id1"></div>
-  <a id="downloadBtn" class="btn" download="my-image.jpg" style="display:none;">Download</a>
+  <div class="box" id="id1">Upload an Image</div>
+  <a id="downloadBtn" class="btn" download="my-image.jpg" style="display:none;">⬇ Download</a>
 
   <script>
     "use strict";
@@ -59,10 +105,11 @@
         p.style.backgroundImage = `url(${url})`;
         p.style.backgroundSize = "cover";
         p.style.backgroundPosition = "center";
+        p.textContent = ""; // remove "Upload an Image"
 
         // Enable download
         downloadBtn.href = url;
-        downloadBtn.download = file.name; // Keep original filename
+        downloadBtn.download = file.name;
         downloadBtn.style.display = "inline-block";
       }
     }
