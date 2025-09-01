@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border{
+         
+            border-collapse: collapse;
+        }
+
+        table{
+            width: 50%;
+            border: 1px solid;
+            margin: auto;
+        
+        }
+
+
+        tr,td{
+               border: 1px solid red;
+
+        }
+
+        td:hover{
+            font-size: 50px;
+            color: aqua;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+
+
+    <table class="border">
+        <thead>
+            <tr>
+                <th colspan="10">Table</th>
+            </tr>
+        </thead>
+        <tbody  id="idtbody">
+       
+
+         
+        </tbody>
+
+    </table>
+    
+
+
+
+
+
+
+
+
+    <script>
+        "use strict"
+
+        let tbody = document.getElementById("idtbody");
+
+    
+       
+
+
+        for(let i =1; i<=10;i++){
+            // console.log(i);
+            let tr = document.createElement('tr');
+            // let str = ""
+            for(let j = 0; j< 10; j++){
+                // console.log(i+10 );
+                // str += i + (j * 10) + " "
+                let td = document.createElement('td')
+                td.innerHTML = ` ${i + (j * 10)}`;
+
+                tr.appendChild(td);
+                
+
+                
+            }
+
+            tbody.appendChild(tr)
+
+            // console.log(str);
+            
+            
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
