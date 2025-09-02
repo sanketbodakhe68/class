@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even Odd & Prime Color Table</title>
+  <style>
+    .border {
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 70%;
+      border: 1px solid;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    th {
+      background: #222;
+      color: #fff;
+      padding: 10px;
+    }
+
+    tr, td {
+      border: 1px solid red;
+      padding: 10px;
+    }
+
+    td:hover {
+      background: #f1f1f1;
+      transform: scale(1.2);
+      color: #082600 !important;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .prime {
+      background: gold;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .even {
+      background: #b3e5fc;
+    }
+
+    .odd {
+      background: #ffcdd2;
+    }
+  </style>
+</head>
+<body>
+
+  <table class="border">
+    <thead>
+      <tr>
+        <th colspan="20">   Prime Numbers</th>
+      </tr>
+    </thead>
+    <tbody id="idtbody"></tbody>
+  </table>
+
+  <script>
+    "use strict";
+
+    let tbody = document.getElementById("idtbody");
+
+    function isPrime(num) {
+      if (num <= 1) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+
+    for (let i = 1; i <= 10; i++) {
+      let tr = document.createElement("tr");
+
+      for (let j = 0; j < 20; j++) {
+        let td = document.createElement("td");
+        let num = i + (j * 10);
+        td.innerHTML = num;
+
+        if (isPrime(num)) {
+          td.classList.add("prime");
+        } else if (num % 2 === 0) {
+          td.classList.add("even");
+        } else {
+          td.classList.add("odd");
+        }
+
+        tr.appendChild(td);
+      }
+
+      tbody.appendChild(tr);
+    }
+  </script>
+
+</body>
+</html>
