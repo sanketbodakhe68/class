@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even Odd Color Table</title>
+  <style>
+    .border {
+      border-collapse: collapse;
+    }
+
+    table {
+      width: 50%;
+      border: 1px solid;
+      margin: auto;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    tr, td {
+      border: 1px solid red;
+      padding: 10px;
+    }
+
+    td:hover {
+      background: #f1f1f1;
+      transform: scale(1.2);
+      color: #082600 !important;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    #controls {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 8px 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="controls">
+    <input type="number" id="input1" placeholder="Start number">
+    <input type="number" id="input2" placeholder="End number">
+    <button onclick="gen()">Generate</button>
+    <button onclick="downloadTableAsCSV()">Download CSV</button>
+  </div>
+
+  <table class="border">
+    <tbody id="idtbody"></tbody>
+  </table>
+
+  <script>
+    "use strict";
+
+    function gen() {
+      let input1 = document.getElementById("input1").value;
+      let input2 = document.getElementById("input2").value;
+
+      let tbody = document.getElementById("idtbody");
+      tbody.innerHTML = "";
+
+      for (let i = 1; i <= 10; i++) {
+        let tr = document.createElement("tr");
+
+        for (let j = +input1; j <= +input2; j++) {
+          let td = document.createElement("td");
+          let num = i * j;
+          td.innerHTML = num;
+          tr.appendChild(td);
+        }
+
+        tbody.appendChild(tr);
+      }
+    }
+
+    function downloadCsv(csvString, filename = 'data.csv') {
+      const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    function downloadTableAsCSV() {
+      let table = document.querySelector("table");
+      let rows = table.querySelectorAll("tr");
+      let csv = "";
+
+      rows.forEach(row => {
+        let cols = row.querySelectorAll("td, th");
+        let rowData = [];
+        cols.forEach(col => rowData.push(col.innerText));
+        csv += rowData.join(",") + "\n";
+      });
+
+      if (csv.trim() === "") {
+        alert("Please generate the table first!");
+        return;
+      }
+
+      downloadCsv(csv, 'multiplication_table.csv');
+    }
+  </script>
+
+</body>
+</html>
