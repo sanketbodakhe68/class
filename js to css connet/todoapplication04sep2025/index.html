@@ -1,46 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./asset/style.css">
-  
-    <style>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful To-Do List</title>
+  <link rel="stylesheet" href="./asset/style.css">
 
-        .scratch{
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-            text-decoration: line-through;
+    body {
+      background: linear-gradient(135deg, #ff6f61, #ffcc70, #6dd5fa, #a1ffce);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #333;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .task {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    #task {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      width: 260px;
+      font-size: 16px;
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .task button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #ff6f61, #ffcc70);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .task button:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #6dd5fa, #a1ffce);
+    }
+
+    .tasklist {
+      width: 370px;
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+      overflow-y: scroll;
+    }
+            .tasklist {
+        width: 370px;
+        max-height: 400px;   /* set a height limit */
+        overflow-y: scroll;  /* vertical scroll when needed */
+        background: rgba(255,255,255,0.95);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
         }
 
-          .unscratch{
-
-            text-decoration: none;
+        /* Optional: Custom Scrollbar Styling */
+        .tasklist::-webkit-scrollbar {
+        width: 8px;
         }
-    </style>
+
+        .tasklist::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+        }
+
+        .tasklist::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #ff6f61, #ffcc70);
+        border-radius: 10px;
+        }
+
+        .tasklist::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #6dd5fa, #a1ffce);
+        }
+
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    li:nth-child(2n) {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    }
+    li:nth-child(3n) {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+    li:nth-child(4n) {
+      background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    }
+
+    li:hover {
+      transform: scale(1.03);
+    }
+
+    li input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    li span {
+      flex: 1;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .scratch {
+      text-decoration: line-through;
+      color: #444;
+      opacity: 0.6;
+    }
+
+    .unscratch {
+      text-decoration: none;
+    }
+
+    li button {
+      margin-left: 8px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 8px;
+      background: #ff6f61;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    li button:hover {
+      background: #6dd5fa;
+    }
+  </style>
 </head>
 <body>
-    <div class="task">
-        <input type="text" id="task" placeholder="Enter your Task">
-        <button onclick="add()">add </button>
-    </div>
-    <div class="tasklist">
-        <ul id="tasklist">
-            <!-- <li>gd</li> -->
-             <!-- <li id="countid1">
-                <input type="checkbox" onchange="scrach('countid1')">
-                <span id="text">text</span>
-                <button onclick="edit('countid1')">Edit</button>
-                <button onclick="DeleteItem('countid1')">Delete</button>
-                
-            </li> -->
+  <div class="task">
+    <input type="text" id="task" placeholder="Enter your Task">
+    <button onclick="add()">Add</button>
+  </div>
 
-        </ul>
+  <div class="tasklist">
+    <ul id="tasklist">
+      
+    </ul>
+  </div>
 
-    </div>
-
-    
-    <script src="./asset/scrript.js"></script>
+  <script src="./asset/scrript.js"></script>
 </body>
 </html>
