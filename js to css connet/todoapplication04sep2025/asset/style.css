@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+.task{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+    gap: 50px;
+    
+}
+.tasklist{
+    height: 500px;
+    width: 300px;
+    margin: auto;
+    border: 1px solid red;
+    margin-top: 50px;
+    /* overflow-y: scroll; */
+}
+.tasklist>ul{
+    list-style: none;
+
+}
+
