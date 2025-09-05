@@ -73,27 +73,68 @@ function DeleteItem(id){
 document.getElementById(id).remove();
 }
 
+
 function edit(id){
 let span = document.body.querySelector(`#${id}>#text`)
-// let com = confirm("can you edit");
+let btn = document.body.querySelectorAll(`#${id}>button`)
+let com = confirm("can you edit");
 
-// if(com){
-//     console.log(span);
+if(com){
+  
+    console.log(span);
+    // span.contentedith
+
+    span.contentEditable = true;
+    span.focus();
+
+    if(btn[0].innerHTML == "Edit"){
+        document.body.querySelectorAll(`#${id}>button`)[0].remove();
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "Save";
+
+        
+
+        btn2.addEventListener("click",function(){
+            span.contentEditable = false;
+            btn2.remove();
+            let btn3 = document.createElement("button");
+            btn3.innerHTML = "Edit";
+            btn3.addEventListener("click",function(){
+                edit(id)
+            })
+            document.getElementById(id).appendChild(btn3);
+            // btn[0].innerHTML = "Edit"
+        })
+
+        document.getElementById(id).appendChild(btn2);
+
+    //    document.getElementById(id).insertBefore(btn2,document.getElementById(id).children[2]);
+    }
+
+
 
     
-// }
+}
 
 
 
 
 
-    let text = prompt('Enter your edith task',span.innerHTML)
+    // let text = prompt('Enter your edith task',span.innerHTML)
 
-    console.log(text);
-    span.innerHTML = text
+    // console.log(text);
+    // span.innerHTML = text
     
 
 
 }
+// let btn = document.createElement("button");
+
+// btn.innerHTML = "SAve"
 
 
+// btn.addEventListener("click", ()=>{
+//     alert("ok")
+// })
+
+// document.body.appendChild(btn);
