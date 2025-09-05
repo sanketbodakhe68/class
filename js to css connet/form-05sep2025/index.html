@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 40px;
+        }
+
+        .form {
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 15px;
+        }
+
+        .radio-group input,
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            margin-right: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="form">
+        <label for="fname">First Name</label>
+        <input type="text" placeholder="First name" id="fname">
+
+        <label for="mname">Middle Name</label>
+        <input type="text" placeholder="Middle name" id="mname">
+
+        <label for="lname">Last Name</label>
+        <input type="text" placeholder="Last name" id="lname">
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="email">
+
+        <label for="phonno">Phone No</label>
+        <input type="number" placeholder="Phone number" id="phonno">
+
+        <label>Gender</label>
+        <div class="radio-group">
+            <input type="radio" name="gender" id="gender" value="male">
+            <label for="male">Male</label>
+
+            <input type="radio" name="gender" id="gender" value="female">
+            <label for="female">Female</label>
+
+            <input type="radio" name="gender" id="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+
+        <label for="myDropdown">Enter Your Course</label>
+        <select id="myDropdown" name="myOption">
+            <option value="none">None</option>
+            <option value="java">Java Full Stack</option>
+            <option value="python">Python Full Stack</option>
+            <option value="internship">Apply for Internship</option>
+        </select>
+
+        <label>Your Stream</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="cse" name="choices" value="cse">
+            <label for="cse">CSE</label>
+
+            <input type="checkbox" id="mech" name="choices" value="mech">
+            <label for="mech">Mech</label>
+        </div>
+
+        <button type="submit" onclick="submit()">Submit</button>
+        <button type="reset">Reset</button>
+    </div> -->
+
+
+
+    <!-- <form action="" onsubmit="return mysubmit(event)"> -->
+    <form action="">
+
+        <input type="text" placeholder="Enter username" name="username">
+        <input name="passsword" type="password" placeholder="Enter password">
+
+        <input type="radio" name="gen" value="m"> <label for="">M</label>
+        <input type="radio" name="gen" value="f"> <label for="">F</label>
+
+        <input type="submit">
+         
+    </form>
+
+
+
+    <script src="./script.js"></script>
+
+
+
+
+
+</body>
+</html>
