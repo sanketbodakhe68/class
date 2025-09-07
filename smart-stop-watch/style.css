@@ -1,0 +1,82 @@
+
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff0000, #00ff00, #0000ff);
+    background-size: 600% 600%;
+    animation: rgbBg 12s ease infinite;
+  }
+
+  @keyframes rgbBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .stopwatch {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    width: 320px;
+    color: white;
+  }
+
+  #display {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px cyan, 0 0 30px magenta;
+  }
+
+  button {
+    padding: 12px 25px;
+    margin: 8px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    color: white;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  }
+
+  #startStopBtn {
+    background: linear-gradient(45deg, #00ff99, #00ccff);
+  }
+  #lapBtn {
+    background: linear-gradient(45deg, #ff00ff, #ff6600);
+  }
+  #resetBtn {
+    background: linear-gradient(45deg, #ff0033, #ff0000);
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+    text-align: left;
+  }
+
+  ul li {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: #ffccff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffff;
+  }
+

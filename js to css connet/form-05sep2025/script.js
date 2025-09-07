@@ -73,13 +73,13 @@
 // } )
 
 
-// let p = document.getElementsByTagName('p')[0]
+let p = document.getElementsByTagName('p')[0]
 
-// let count = 1;
+let count = 1;
 
-// setInterval(()=>{
-//     p.innerHTML = count++;
-// },1000)
+setInterval(()=>{
+    p.innerHTML = count++;
+},1000)
 
 // function show(){
 //     alert("showw")
