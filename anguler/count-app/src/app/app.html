@@ -1,0 +1,22 @@
+<h1>
+{{title}}
+</h1>
+<h2>
+  {{count}}
+
+</h2>
+<p>
+  <!-- {{(count % 2 == 0)?"EVEN":"ODD"}} -->
+   {{textRebuild()}}
+</p>
+
+
+<div class="btn">
+  <button (click)="add()">add count</button>
+  <button (click)="sub()">down count</button>
+  <button (click)="reset()">res</button>
+</div>
+
+
+
+
