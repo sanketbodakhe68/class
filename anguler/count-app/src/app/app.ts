@@ -1,9 +1,11 @@
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,6 +16,8 @@ export class App {
   even:string = "even";
   odd:string = "odd"
   text = ""
+  
+  test = true
 
 
   textRebuild(){

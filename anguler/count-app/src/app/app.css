@@ -68,3 +68,13 @@ button:active {
     text-shadow: 0 0 20px #00f7ff99, 0 0 40px #00f7ff55, 0 0 60px #00f7ff33;
   }
 }
+.red{
+
+  background-color: red;
+
+}
+.green{
+
+  background-color:green;
+
+}
